@@ -7,5 +7,27 @@
 <body>
     <h1>Inicio</h1>
     <p th:text="${saludo}"></p>
+
+    <div th:if="${personas != null and !personas.empty}">
+
+        <table border="2">
+            <tr>
+                <th>Nombre</th>
+                <th>Primer apellido</th>
+                <th>Segundo apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
+            </tr>
+            <tr th:each="persona : ${personas}">
+                <td th:text="${persona.nombre}"></td>
+                <td th:text="${persona.primerApellido}"></td>
+                <td th:text="${persona.segundoApellido}"></td>
+                <td th:text="${persona.email}"></td>
+                <td th:text="${persona.telefono}"></td>
+            </tr>
+        </table>
+
+    </div>
+
 </body>
 </html>
